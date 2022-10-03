@@ -14,17 +14,12 @@ public class GameServlet extends HttpServlet {
     private GameState currentState = GameState.PLAYING;
 
     public void init() throws ServletException {
-        System.out.println("HelloServlet initialized()");
+        System.out.println("ConnectFourServlet initialized()");
     }
 
     @Override
     public void destroy() {
-        System.out.println("HelloServlet destroyed()");
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        System.out.println("ConnectFourServlet destroyed()");
     }
 
     @Override
@@ -53,7 +48,6 @@ public class GameServlet extends HttpServlet {
                     int column = Integer.parseInt(request.getParameter("drop"));
                     game.dropDisc(column);
                     this.currentState = game.getCurrentGameState();
-                    game.changeTurn();
                     printGame(response);
                 } catch (Exception e)
                 {

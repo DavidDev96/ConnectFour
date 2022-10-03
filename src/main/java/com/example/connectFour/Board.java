@@ -1,7 +1,7 @@
 package com.example.connectFour;
 
 public class Board {
-    static final int SIZE = 7;
+    public static final int SIZE = 7;
     private int[][] board = new int[SIZE][SIZE];
 
 

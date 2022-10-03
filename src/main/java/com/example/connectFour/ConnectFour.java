@@ -186,7 +186,13 @@ public class ConnectFour {
     }
 
     public String getWinner() {
-        return winner == Player.PLAYER_ONE ? getPlayerOneName() : getPlayerTwoName();
+        if (winner == Player.PLAYER_ONE) {
+            return getPlayerOneName();
+        } else if (winner == Player.PLAYER_TWO) {
+            return getPlayerTwoName();
+        } else {
+            return null;
+        }
     }
 
     public DiscColor getDiscColorOfPosition(int x, int y) {
@@ -194,10 +200,10 @@ public class ConnectFour {
     }
 
     public GameState getCurrentGameState() {
-        if (this.allDiscsPlayed()) {
-            return GameState.TIE;
-        } else if (this.playerWon(getPlayersTurn() == 1 ? DiscColor.RED : DiscColor.YELLOW)) {
+        if (this.playerWon(getPlayersTurn() == 1 ? DiscColor.RED : DiscColor.YELLOW)) {
             return GameState.WIN;
+        } else if (this.allDiscsPlayed()) {
+            return GameState.TIE;
         } else {
             return GameState.PLAYING;
         }
@@ -211,7 +217,7 @@ public class ConnectFour {
 
     public void dropDisc(int column) {
         board.drop(getCurrentPlayer(), column);
+        this.changeTurn();
     }
-
 }
 
