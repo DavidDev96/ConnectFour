@@ -9,21 +9,42 @@ public class Board {
         for (int[] innerArray: board) {
             // second for...each loop access each element inside the row
             for(int data: innerArray) {
-                innerArray[data] = 0;       // 0 for empty cell, 1 for yellow (player 1) disc, 2 for red (player 2) disc
+                innerArray[data] = 0;
             }
         }
     }
 
-    public int getDiscOfPosition(int x, int y) {
-        return board[x][y];
+    public DiscColor getDiscColorOfPosition(int x, int y) {
+        switch (board[x][y]) {
+            case 1:
+                return DiscColor.RED;
+            case 2:
+                return DiscColor.YELLOW;
+            default:
+                return DiscColor.WHITE;
+        }
     }
 
 
-    public void drop(CurrentPlayer currentPlayer, int column) {
-        if (currentPlayer == CurrentPlayer.PLAYER_ONE) {
+    public void drop(Player player, int column) {
+        if (player == Player.PLAYER_ONE) {
             // drop red disc
-        } else if (currentPlayer == CurrentPlayer.PLAYER_TWO){
+            for (int i = board.length - 1; i >= 0; i--)
+                for (int j = board[i].length - 1; j >= 0; j--) {
+                    if (j == column && board[i][j] == 0) {
+                        board[i][j] = DiscColor.RED.ordinal();
+                        return;
+                    }
+                }
+        } else if (player == Player.PLAYER_TWO){
             // drop yellow disc
+            for (int i = board.length - 1; i >= 0; i--)
+                for (int j = board[i].length - 1; j >= 0; j--) {
+                    if (j == column && board[i][j] == 0) {
+                        board[i][j] = DiscColor.YELLOW.ordinal();
+                        return;
+                    }
+                }
         } else {
             throw new IllegalArgumentException("Player not set");
         }
