@@ -24,10 +24,8 @@ public class GameServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
+        
         try (PrintWriter out = response.getWriter()) {
-
 
             if (request.getParameter("start") != null) {
 
@@ -53,6 +51,8 @@ public class GameServlet extends HttpServlet {
                 {
                     System.out.println(e);
                 }
+            } else {
+                throw new IllegalArgumentException();
             }
 
         } catch (Exception e) {

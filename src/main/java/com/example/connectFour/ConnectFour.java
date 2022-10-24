@@ -10,9 +10,9 @@ public class ConnectFour {
     private String playerTwoName;
 
     private Player winner;
-    private static int playersTurn = Player.PLAYER_ONE.ordinal();
+    private int playersTurn = Player.PLAYER_ONE.ordinal();
 
-    private boolean allDiscsPlayed() {
+    public boolean allDiscsPlayed() {
         for (int row = 0; row < Board.SIZE-1; row++) {
             for (int col = 0; col < Board.SIZE; col++) {
                 if (board.getDiscColorOfPosition(row, col) == DiscColor.WHITE) {
@@ -157,7 +157,7 @@ public class ConnectFour {
         this.playerTwoName = player2;
     }
 
-    public static Player getCurrentPlayer() {
+    public Player getCurrentPlayer() {
         return playersTurn == Player.PLAYER_ONE.ordinal() ? Player.PLAYER_ONE : Player.PLAYER_TWO;
     }
 
@@ -169,7 +169,7 @@ public class ConnectFour {
         return playerOneName;
     }
 
-    public void changeTurn() {
+    private void changeTurn() {
         if (playersTurn == Player.PLAYER_ONE.ordinal()) {
             playersTurn = Player.PLAYER_TWO.ordinal();
         } else {
