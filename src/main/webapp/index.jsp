@@ -6,7 +6,6 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
     <body>
-        <h1>This is a test for the CI.</h1>
         <h1 style="text-align: center">Welcome to the Connect-Four Browser Game!</h1>
         <br/>
         <div style="text-align: center">

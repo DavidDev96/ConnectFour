@@ -1,10 +1,6 @@
 package com.example.connectFour;
 
 public class ConnectFour {
-
-    // implement the logic of the
-    // game. Keep the SOLID principles in mind in order to create well-structured and testable code
-
     private Board board;
     private String playerOneName;
     private String playerTwoName;
