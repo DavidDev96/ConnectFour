@@ -74,8 +74,10 @@ Runner sind die Maschinen, die Aufgaben in einem GitHub-Aktions-Workflow ausfüh
 Die Installation wurde laut Github-Setting-Action durchgeführt:
 ![img_3.png](img_3.png)
 
-![img_4.png](img_4.png)
+![img_14.png](img_14.png)
 
-![img_5.png](img_5.png)
+![img_13.png](img_13.png)
+
+![img_15.png](img_15.png)
 
 Im Workflow File wurden dieselben Jobs wie bei der Übungsvorlesung übernommen und angepasst.
