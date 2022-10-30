@@ -1,7 +1,7 @@
-
+name: Java CI
 runs-on: self-hosted
 
-#name: Java CI
+
 #
 #on:
 #  push:
