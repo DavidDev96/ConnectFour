@@ -35,6 +35,9 @@ siehe "Systemvoraussetzung für die 3.Übung.pdf"
 GitHub bietet gehostete virtuelle Maschinen zur Ausführung von Workflows an. Die virtuelle Maschine enthält eine Umgebung mit Tools, Paketen und Einstellungen, die für GitHub-Aktionen zur Verfügung stehen.
 
 Runner sind die Maschinen, die Aufgaben in einem GitHub-Aktions-Workflow ausführen. Ein Runner kann zum Beispiel Ihr Repository lokal klonen, Testsoftware installieren und dann Befehle ausführen, die Ihren Code bewerten.
+
+![img_3.png](img_3.png)
+
 ## Aufgabenstellung:
 
 
