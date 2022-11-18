@@ -51,12 +51,12 @@ Es handelt sich hier um eine Attrappe oder vorgetäuschtes Objekt mit dem man di
 Schnittstellen des testenden Objekts darstellt. 
 
 Mock-Objekte implementieren Schnittstellen, über die das testende Objekt (ConnectFour, Game) auf seine Umgebung zugreift.
-Sie stellen sicher, dass sie erwarteten Methodenaufrufe vollständig, mit den korrekten Parametern in der
+Sie stellen sicher, dass die erwarteten Methodenaufrufe vollständig, mit den korrekten Parametern in der
 erwarteten Reihenfolge durchgeführt werden.
 
 Hier verwendet man üblicherweise ein Mocking Framework wie Mockito.
 
-In diesem Fall hab ich bei den Tests auf Mocks verzichtet, da die nötigen Tests allein in Unit-Tests abgebildet werden können.
+In diesem Fall hab ich bei den Tests auf Mocks verzichtet, da Java Servlets verwensdet werden und die nötigen Tests allein in Unit-Tests abgebildet werden können.
 
 
 ![img_1.png](img_1.png)
@@ -66,11 +66,12 @@ Ein Stub-Objekt ist auch ein Hilfsobjekt, welches beim Aufruf einer bestimmten M
 
 
 Durch die Verwendung eines Stubs können Sie Ihren Code testen, ohne sich direkt mit der Abhängigkeit auseinandersetzen zu müssen.
-
+Stubs werden oft anstatt problematischen Code verwendet. Wenn zum Beispiel ein Netzwerk oder eine Datenbank verwendet wird, kann man stattdessen ein Stub verwenden.
+Das sind oft hard-coded Testdaten, wenn was von der Datenbank zurückgegeben werden soll.
 ![img.png](img.png)
 
 Spies geben Auskunft darüber, wie oft eine Funktion aufgerufen wird, welche Argumente übergeben wurden
-und welche Wert retourniert wird. 
+und welcher Wert retourniert wird. 
 Ein Spy ist also gut um zu verifizieren, was bei diesem Test passiert. 
 
 ## CI/CD:
