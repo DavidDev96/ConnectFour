@@ -44,20 +44,34 @@ Bei den Tests wurden bis auf kleine Ausnahmen (alle Spielrichtungen) alle Klasse
 ![img_6.png](img_6.png)
 
 
-### Mock vs. Spy in Mockito:
+### Mocks, Stubs und Spys:
 
-Wenn Mockito ein Mock erstellt, geschieht dies anhand der Klasse eines Typs, nicht anhand einer tatsächlichen Instanz.
-Der Mock erstellt einfach eine einfache Shell-Instanz der Klasse, die vollständig instrumentiert ist, um Interaktionen mit ihr zu verfolgen.
+Ein Mock-Objekt wird als Platzhalter für echte Objekte verwendet. 
+Es handelt sich hier um eine Attrappe oder vorgetäuschtes Objekt mit dem man die 
+Schnittstellen des testenden Objekts darstellt. 
 
-Der Spion hingegen umhüllt eine vorhandene Instanz. Sie verhält sich genauso wie die normale Instanz; der einzige Unterschied ist, dass sie auch instrumentiert wird, um alle Interaktionen mit ihr zu verfolgen.
+Mock-Objekte implementieren Schnittstellen, über die das testende Objekt (ConnectFour, Game) auf seine Umgebung zugreift.
+Sie stellen sicher, dass sie erwarteten Methodenaufrufe vollständig, mit den korrekten Parametern in der
+erwarteten Reihenfolge durchgeführt werden.
+
+Hier verwendet man üblicherweise ein Mocking Framework wie Mockito.
+
+In diesem Fall hab ich bei den Tests auf Mocks verzichtet, da die nötigen Tests allein in Unit-Tests abgebildet werden können.
+
 
 ![img_1.png](img_1.png)
 
-Ein Stub ist ein kontrollierbarer Ersatz für eine bestehende Abhängigkeit (oder einen Kollaborateur) im System. Durch die Verwendung eines Stubs können Sie Ihren Code testen, ohne sich direkt mit der Abhängigkeit auseinandersetzen zu müssen.
 
-Ein Mock-Objekt ist ein unechtes Objekt im System, das darüber entscheidet, ob der Unit-Test bestanden hat oder nicht. Dazu wird überprüft, ob das zu testende Objekt wie erwartet mit dem Scheinobjekt interagiert.
+Ein Stub-Objekt ist auch ein Hilfsobjekt, welches beim Aufruf einer bestimmten Methode unabhängig von der Eingabe die gleiche Ausgabe liefert.
+
+
+Durch die Verwendung eines Stubs können Sie Ihren Code testen, ohne sich direkt mit der Abhängigkeit auseinandersetzen zu müssen.
 
 ![img.png](img.png)
+
+Spies geben Auskunft darüber, wie oft eine Funktion aufgerufen wird, welche Argumente übergeben wurden
+und welche Wert retourniert wird. 
+Ein Spy ist also gut um zu verifizieren, was bei diesem Test passiert. 
 
 ## CI/CD:
 

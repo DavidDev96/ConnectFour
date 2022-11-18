@@ -8,6 +8,12 @@ public class ConnectFour {
     private Player winner;
     private int playersTurn = Player.PLAYER_ONE.ordinal();
 
+    public ConnectFour(String player1, String player2) {
+        this.board = new Board();
+        this.playerOneName = player1;
+        this.playerTwoName = player2;
+    }
+
     public boolean allDiscsPlayed() {
         for (int row = 0; row < Board.SIZE-1; row++) {
             for (int col = 0; col < Board.SIZE; col++) {
@@ -147,12 +153,6 @@ public class ConnectFour {
         return false;
     }
 
-    public ConnectFour(String player1, String player2) {
-        this.board = new Board();
-        this.playerOneName = player1;
-        this.playerTwoName = player2;
-    }
-
     public Player getCurrentPlayer() {
         return playersTurn == Player.PLAYER_ONE.ordinal() ? Player.PLAYER_ONE : Player.PLAYER_TWO;
     }
@@ -211,9 +211,11 @@ public class ConnectFour {
         this.playersTurn = Player.PLAYER_ONE.ordinal();
     }
 
-    public void dropDisc(int column) {
+    public GameState dropDisc(int column) {
         board.drop(getCurrentPlayer(), column);
+        GameState state = this.getCurrentGameState();
         this.changeTurn();
+        return state;
     }
 }
 

@@ -2,13 +2,17 @@ import com.example.connectFour.*;
 import org.junit.jupiter.api.*;
 
 import org.junit.jupiter.api.DisplayName;
+import org.mockito.Mock;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.*;
 
 
 class GameTest {
+
+    @Mock
+    ConnectFour gameMock;
     private ConnectFour game;
     private Service service;
     private Board board;

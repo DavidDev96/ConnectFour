@@ -44,8 +44,7 @@ public class GameServlet extends HttpServlet {
             } else if (request.getParameter("drop") != null) {
                 try {
                     int column = Integer.parseInt(request.getParameter("drop"));
-                    game.dropDisc(column);
-                    this.currentState = game.getCurrentGameState();
+                    this.currentState = game.dropDisc(column);
                     printGame(response);
                 } catch (Exception e)
                 {
@@ -116,7 +115,7 @@ public class GameServlet extends HttpServlet {
 
             // Reset Button
             out.println("<form action='GameServlet' method='POST'>");
-            out.printf("<button type='submit' name='reset' style='margin: 5px;'>Play again</button>");
+            out.printf("<button type='submit' name='reset' style='margin: 5px;'>Reset / Play again</button>");
             out.println("</form>");
 
             out.println("</div>");
